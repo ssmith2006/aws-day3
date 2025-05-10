@@ -16,11 +16,11 @@ const client = new DynamoDBClient({
 
 const doClient = DynamoDBDocumentClient.from(client);
 
-async function scanTodos() {
+export async function scanTodos() {
   const { Items } = await doClient.send(new ScanCommand({ TableName: "Todo" }));
   return Items || [];
 }
 
-async function createTodo(item) {
+export async function createTodo(item) {
   await doClient.send(new PutCommand({ TableName: "Todo", Item: item }));
 }
