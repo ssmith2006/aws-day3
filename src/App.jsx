@@ -16,7 +16,6 @@ function App() {
     await createTodo(newItem);
     setTodos((prev) => [...prev, newItem]);
     setInput("");
-  
   }
 
   return (
@@ -36,7 +35,7 @@ function App() {
           {Todos.map((item) => (
             <li key={item.id}>{item.input}</li>
           ))}
-          ;
+          
         </ul>
       </div>
     </>
